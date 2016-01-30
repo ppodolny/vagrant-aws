@@ -1,0 +1,9 @@
+---
+- name: vagrant test
+  hosts: all
+  gather_facts: yes
+  sudo: yes
+  sudo_user: root
+  remote_user: ubuntu
+  roles:
+    - elk

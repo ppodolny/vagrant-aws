@@ -1,0 +1,22 @@
+---
+- hosts: localhost
+  tasks:
+    - assert:
+        that:
+          - ansible_env.AWS_ACCESS_KEY is defined
+          - ansible_env.AWS_SECRET_KEY is defined
+
+- name: Deploy Consul Quorum
+  hosts: cluster
+  sudo: True
+  gather_facts: true
+  vars_files:
+    - roles/consul/group_vars/consul
+  vars:
+    version: "0.6.1"
+    encryption_key: "iDY7ZHOuovG6QSpLeX9+kg=="
+    datacenter: "{{ datacenter }}"
+    consul_type: "server"
+    consul_quorum: "nill"
+  roles:
+    - consul
