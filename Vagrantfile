@@ -12,6 +12,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     aws.keypair_name = ENV['AWS_KEYPAIR_NAME']
     override.ssh.private_key_path = ENV['AWS_SSH_KEY']
     override.ssh.username = "ubuntu"
+    override.nfs.functional = false
     aws.ami = "ami-d05e75b8"
     aws.terminate_on_shutdown  = false
     aws.tags = {
