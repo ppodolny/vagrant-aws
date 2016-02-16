@@ -1,5 +1,6 @@
 # vagrant-aws
-Vagrant based development environment for testing Ansible playbooks on top of AWS.
+Vagrant based development environment for testing Ansible playbooks on top of AWS EC2.
+Tested on Vagrant 1.8.x
 
 Set your env. vars:
 ```
